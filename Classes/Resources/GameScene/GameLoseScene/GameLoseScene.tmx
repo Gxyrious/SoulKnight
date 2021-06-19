@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="60" tileheight="60" infinite="0" nextlayerid="3" nextobjectid="3">
+ <tileset firstgid="1" source="SceneResourse.tsx"/>
+ <layer id="1" name="background" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJwV1QVsVlcYBuBixWEDikNpaXF3l+K2JRvu7kxxp7jOcHdniru7u7vrhjt7/uQ8yUne5H55770nJ0ZQUFBMYhGbOAQTl3jEJwEJSURikpCUz/icZCQnBSGkJBWpSUNa0pGeDGQklEyEEU5mIogkC1nJRnZykJNc5CYPeclHfgpQkEIUpghFKUZxSlCSUpSmDGUpR3miqEBFKlGZKlSlGtWpQU1q8QVf0s6La89X9l9TmzrUpR71aUBDGtGYJjSlGc1pQUta0Zo2tA08m/Z0oCOd6EwXvuFbvuN7fuBHutKN7vSgJ73oTR/60o/+DGAgg4hmMEMYyjCGM4KRjGI0YxjLOH7iZ37hV35jPBOYyCQmM4WpTGM6M5jJLGYzh7nMYz4LWMgiFrOEpSxjOSv4nT/4k7/4m39YySpWs4a1rGM9G9jIJjazha1sYzs72MkudrOHvexjPwc4yCEOc4SjHOM4JzjJKU5zhrOc4zwXuMglLnOFq1zjOje4yS1uc4e73OM+D3jIIx7zhH/5j6c84zkveMkrXvOGt7zjPR/4yCeCYljEJBaxiUMwcYlHfBKQkEQkprx/PooKVKQSlUkhCyElqUhNGtKSjvRkICOhZCKMcDITQSRZyEo2spODnOQiNy3MakkrWtOGthSSFaYIRSlGcUpQklKUpgxlKRfoQhQVqEglKlOFqlSjOjWoSS0GmRXNYIYwlGHUltWhLvWoTwMa0ojGNKEpzWge6EJLWtGaNrSlHe3pQEc60ZkuzDFrLvOYzwIW0lXWje70oCe96E0f+tKP/gxgYKAL0QxmCEMZxnBGMJJRjGYMY9lm1nZ2sJNd7Ga8bAITmcRkpjCVaUxnBjOZxexAF+Yyj/ksYCGLWMwSlrKM5azgmlnXucFNbnGblbJVrGYNa1nHejawkU1sZgtbA13Yzg52sovd7GEv+9jPAQ5yiMMc4SjHOM4JTnKK05zhLOc4zwUuconLXOFqoAvXucFNbnGbO9zlHvd5wEMe8ZgngW+k8wie2j/jOS94ySte84a3vOM9H/jIJwIXfwxiEovYxCGYuMQjPglISCISk4SkLGIxyUgeOP+EkJJUpCYNaUlHejKQkVAyEUY4mYkgkixkJRvZyUFOcpGbPOQlH/kpQMHA+acwRShKMYpTgpKUojRlKEs5/ge4FRCS
+  </data>
+ </layer>
+ <objectgroup id="2" name="item">
+  <object id="1" name="back" x="702" y="1034">
+   <properties>
+    <property name="Length" value="480.00"/>
+    <property name="Width" value="180.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2" x="534" y="1232">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

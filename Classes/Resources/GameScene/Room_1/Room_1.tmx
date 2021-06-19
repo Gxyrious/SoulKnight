@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="60" tileheight="60" infinite="0" nextlayerid="7" nextobjectid="99">
+ <tileset firstgid="1" source="RoomResourse_1.tsx"/>
+ <tileset firstgid="61" source="../Room_2/RoomResourse_2.tsx"/>
+ <tileset firstgid="61" name="RoomResourse_1" tilewidth="60" tileheight="60" tilecount="60" columns="6">
+  <image source="RoomResourse_1.png" width="360" height="600"/>
+ </tileset>
+ <layer id="1" name="floor" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJytVkEOwCAI8zne5tX9/2E7mSwN0AIemjCnFKGie4zxCNjivP/czJqD9zIWfEf72Um/6FsBy6cVe5Ur4vdqVskpjkXxMk0wnq4GkC/iWIDb2jyYQgwsNhYf1mc6tprPrjanY1c0peaL7T+jow6/tWf8b/lR8qHyH1T6b6Q5Vqeo96n9t3Mm2b3U4VLOY/b+83SQ6QlW/9tgZ/p/B9V3Aa7x7m9v3PP7AQXreYc=
+  </data>
+ </layer>
+ <layer id="3" name="wall" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhcQAuKbfBgQvK41GoRaT82YEOCH3CpJcZ+XHqpYT8xZgwG+01pYL8pDnHkNAKjrXGoQ8akylsj2aGFR90oGFkAuWyCYVzpn5L0Z8qAvdzEZg6u9E8swJX+B7r8G+n2E2MGellITP1KSn082AAAP30bZQ==
+  </data>
+ </layer>
+ <objectgroup id="5" name="objectsLayer">
+  <object id="1" name="wall_1" x="0" y="420">
+   <properties>
+    <property name="Length" value="240.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2" name="wall_2" x="240" y="420">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="360.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3" name="wall_3" x="300" y="420">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="4" name="wall_4" x="300" y="120">
+   <properties>
+    <property name="Length" value="1320.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="5" name="wall_5" x="1620" y="420">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="360.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="6" name="wall_6" x="1560" y="420">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="7" name="wall_7" x="1680" y="420">
+   <properties>
+    <property name="Length" value="240.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="8" name="wall_8" x="1560" y="780">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="9" name="wall_10" x="1620" y="720">
+   <properties>
+    <property name="Length" value="300.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="10" name="wall_11" x="1620" y="1020">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="300.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="11" name="wall_12" x="300" y="1020">
+   <properties>
+    <property name="Length" value="1320.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="12" name="wall_13" x="240" y="1020">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="360.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="13" name="wall_14" x="300" y="780">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="14" name="wall_15" x="0" y="720">
+   <properties>
+    <property name="Length" value="240.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="19" name="door_left" x="60" y="660">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="240.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="20" name="door_right" x="1800" y="660">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="240.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="72" name="left_position" x="180" y="540">
+   <point/>
+  </object>
+  <object id="73" name="right_position" x="1740" y="540">
+   <point/>
+  </object>
+  <object id="74" name="shuijingchong_1" x="1140" y="240">
+   <point/>
+  </object>
+  <object id="77" name="shuijingchong_2" x="1500" y="240">
+   <point/>
+  </object>
+  <object id="78" name="shuijingchong_3" x="1380" y="900">
+   <point/>
+  </object>
+  <object id="79" name="shuijingchong_4" x="1560" y="600">
+   <point/>
+  </object>
+  <object id="80" name="shuijingchong_5" x="840" y="840">
+   <point/>
+  </object>
+  <object id="81" name="shuijingchong_6" x="480" y="300">
+   <point/>
+  </object>
+  <object id="83" name="kuanggong_1" x="420" y="540">
+   <point/>
+  </object>
+  <object id="84" name="kuanggong_2" x="780" y="900">
+   <point/>
+  </object>
+  <object id="85" name="kuanggong_3" x="1080" y="315">
+   <point/>
+  </object>
+  <object id="86" name="kuanggong_4" x="1440" y="540">
+   <point/>
+  </object>
+  <object id="91" name="wall_17" x="600" y="420">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="300.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="92" name="wall_18" x="660" y="420">
+   <properties>
+    <property name="Length" value="180.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="93" name="wall_19" x="1080" y="420">
+   <properties>
+    <property name="Length" value="180.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="94" name="wall_20" x="1260" y="420">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="300.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="95" name="wall_21" x="600" y="960">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="300.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="96" name="wall_22" x="660" y="720">
+   <properties>
+    <property name="Length" value="180.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="97" name="wall_23" x="1080" y="720">
+   <properties>
+    <property name="Length" value="180.00"/>
+    <property name="Width" value="60.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="98" name="wall_24" x="1260" y="960">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="300.00"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>

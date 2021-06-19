@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="60" tileheight="60" infinite="0" nextlayerid="4" nextobjectid="20">
+ <tileset firstgid="1" source="RoomResourse_3.tsx"/>
+ <layer id="1" name="floor" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJylljdTxDAQhZfk60zsyFQmdsTriO7IJQXNzXDj/1/zPOiNH3uWz4LiG1mytXklj81s/A8+HKn7Yu9HgUzGTNZ1za+3kepX6fSTHBSBkfsuk3np9qbGYhR0ZKJX5VcyVvbblno+jPjfFvOYfo19FWxQPX7UbxmjzNr9n1YrlOfl1HwGBmAPXIXnQYd9qfn38cyC//XaDJgFc2AeLIT3A4vXTd+6ZFxKa2qMNnBe27EIlsAyWAGrYM3lorTJOiRfEf2+/krxvwi618EG2ARbYBvsgF1nr+/hLv2+Hphz9hvt4XwfHIBDcASOwUmwdyjxiuWhr37tQ9pzCs7AObgAl/ZTg+w53RfL+7T4s4+Yb8qtZV6DG3AL7sA9eJB86xlQRfRPO5f8uarPj+AJPIMX8ArewLs19eZjn9p/Pv5tOc2tORdpI2Olvld/1O/zTju0Fzhn7HNrzkrakjvZsTM4dv9oT2tv07/CJu8k3guF09/3jvZ5Z1517utCbdC1rvyn/DP0kZH6D/INEDm16A==
+  </data>
+ </layer>
+ <layer id="2" name="wall" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYBicIA8N56JhdHl0tehi5NhPLZBLJz2D1X5ywnKg7adm/ONKm/j8SE37yQGj9g8f+5HLT/S0SC/76aFnONk/0OUfsXUtvjoYWf9gBQAU5iCT
+  </data>
+ </layer>
+ <objectgroup id="3" name="objectsLayer">
+  <object id="3" name="transfer" x="900" y="660">
+   <properties>
+    <property name="Length" value="180.00"/>
+    <property name="Width" value="240.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="4" name="wall_1" x="360" y="1020">
+   <properties>
+    <property name="Length" value="60"/>
+    <property name="Width" value="900"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="7" name="wall_2" x="360" y="120">
+   <properties>
+    <property name="Length" value="1200"/>
+    <property name="Width" value="60"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="11" name="wall_4" x="1500" y="1020">
+   <properties>
+    <property name="Length" value="60"/>
+    <property name="Width" value="360"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="12" name="wall_6" x="1500" y="420">
+   <properties>
+    <property name="Length" value="60"/>
+    <property name="Width" value="360"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="13" name="wall_7" x="1560" y="420">
+   <properties>
+    <property name="Length" value="360"/>
+    <property name="Width" value="60"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="14" name="wall_5" x="1560" y="720">
+   <properties>
+    <property name="Length" value="360"/>
+    <property name="Width" value="60"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="10" name="wall_3" x="420" y="1020">
+   <properties>
+    <property name="Length" value="1020"/>
+    <property name="Width" value="60"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="16" name="door_right" x="1800" y="660">
+   <properties>
+    <property name="Length" value="60.00"/>
+    <property name="Width" value="240.00"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="17" name="right_position" x="1740" y="540">
+   <point/>
+  </object>
+  <object id="19" name="text" x="990" y="420">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

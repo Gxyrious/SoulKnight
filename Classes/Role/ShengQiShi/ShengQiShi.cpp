@@ -14,6 +14,18 @@ ShengQiShi* ShengQiShi::create(const std::string& filename)
 	return nullptr;
 }
 
+void ShengQiShi::useRoleSkill()
+{
+	this->startCalculateSkillCD = true;
+	this->_speed = _normalSpeed * 1.5f;
+}
+
+void ShengQiShi::stopRoleSkill()
+{
+	this->startCalculateSkillCD = false;
+	this->setNormalSpeed();
+}
+
 void ShengQiShi::initRole()
 {
 	BasicRole::initRole();
@@ -31,18 +43,9 @@ void ShengQiShi::initRole()
 	this->_speed = 7.0f;
 	this->_normalSpeed = 10.0f;
 
-	this->_skillCD = 0.1f;//
+	this->_skillTimeMaxAddition = 180;
 
 	this->_ifRoleCollided = false;
-	//´´½¨shengqishiµÄÎäÆ÷
+
 	this->_weapon = PoJiuDeShouQiang::create("Weapon/PoJiuDeShouQiang/PoJiuDeShouQiang.png");
-}
-
-void ShengQiShi::useRoleSkill()
-{
-
-}
-
-void ShengQiShi::stopRoleSkill()
-{
 }

@@ -14,6 +14,9 @@ void beginMainMusic()
     if (!ifBGMPlaying)           //只在第一回开始
     {
         mainMusicID = AudioEngine::play2d("Music/BackMusic.mp3", true);		//这个true是是否循环
+        AudioEngine::setVolume(mainMusicID, musicVolume);
+        musicIfOpen = true;
+        CCLOG("open music");
     }
     ifBGMPlaying = true;
 }
@@ -27,11 +30,27 @@ void stopMainMusic()
 void playShootMusic()
 {
     AudioEngine::preload("music/BulletShot.mp3");
-    AudioEngine::play2d("music/BulletShot.mp3", true);
+    int ID = AudioEngine::play2d("music/BulletShot.mp3");
+    AudioEngine::setVolume(ID, musicVolume);
+}
+
+void playClickMusic()
+{
+    AudioEngine::preload("music/ButtonClick.mp3");
+    int ID = AudioEngine::play2d("music/ButtonClick.mp3");
+    AudioEngine::setVolume(ID, musicVolume);
+}
+
+void playLosekMusic()
+{
+    AudioEngine::preload("music/LoseBgm.mp3");
+    int ID = AudioEngine::play2d("music/LoseBgm.mp3");
+    AudioEngine::setVolume(ID, musicVolume);
 }
 
 void musicresumeOrpausePlaying()
 {
+    
     if (AudioEngine::getState(mainMusicID) == AudioEngine::AudioState::PAUSED)  //这里有个提取状态的用法，参数是ID
     {
         AudioEngine::resume(mainMusicID);   //如果暂停，就继续

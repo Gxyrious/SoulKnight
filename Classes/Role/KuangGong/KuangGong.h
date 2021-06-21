@@ -4,8 +4,7 @@
 
 #include "cocos2d.h"
 #include "Role/BasicRole.h"
-#include "Weapon/PoJiuDeShouQiang/PoJiuDeShouQiang.h"
-#include "Weapon/XianQuZhe/XianQuZhe.h"
+#include "Weapon/CommonWeapon/CommonWeapon.h"
 
 class KuangGong :public BasicRole
 {

@@ -1,4 +1,6 @@
 #include "Scene/GameEndScene/GameLoseScene.h"
+#include "Music/Music.h"
+
 USING_NS_CC;
 cocos2d::Scene* GameLose::createScene()
 {
@@ -16,7 +18,11 @@ bool GameLose::init()
 	auto objectsLayer = tileMap->getObjectGroup("item");
 	auto backItemPosition = objectsLayer->getObject("back");
 
-	auto backItem = MenuItem::create([](Ref* pSender)->void {
+	auto backItem = MenuItem::create([](Ref* pSender)->void {	
+		if (musicIfOpen == true)
+		{
+			beginMainMusic();
+		}
 		Director::getInstance()->popToRootScene();
 		});
 	backItem->setAnchorPoint(Vec2::ZERO);
@@ -25,5 +31,12 @@ bool GameLose::init()
 	auto menu = Menu::create(backItem, NULL);
 	menu->setPosition(Vec2::ZERO);
 	this->addChild(menu);
+
+	//πÿ±’±≥æ∞“Ù¿÷
+	stopMainMusic();
+
+	playLosekMusic();
+
+
 	return true;
 }

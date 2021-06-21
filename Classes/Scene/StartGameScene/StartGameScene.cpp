@@ -58,7 +58,10 @@ bool StartGame::init()
 	
 	//SetStyleItem
 	auto setGameStyleItem = MenuItemImage::create("StartGameScene/SetStyleItem.png", "StartGameScene/SetStyleItem.png",
-		[](Ref* pSender)->void {Director::getInstance()->pushScene(SetGameStyle::create()); });
+		[](Ref* pSender)->void {
+			playClickMusic();
+			Director::getInstance()->pushScene(SetGameStyle::create());
+		});
 	if (setGameStyleItem == nullptr || setGameStyleItem->getContentSize().width <= 0 || setGameStyleItem->getContentSize().height <= 0)
 	{
 		problemLoading("'SetStyleItem.png'");
@@ -87,10 +90,14 @@ bool StartGame::init()
 		menu->addChild(showProducersInformationItem);
 	}
 
-
+	
 	//startGameItem
 	auto startGameItem = MenuItemImage::create("StartGameScene/StartGameItem.png", "StartGameScene/StartGameItem.png",
 		[](Ref* pSender) ->void {
+			playClickMusic();
+			//ÖØÖÃ¹Ø¿¨¹ÖÎï
+			ifRoom1Ended = false;
+			ifRoom2Ended = false;
 			Director::getInstance()->pushScene(TransitionCrossFade::create(0.5f, RoleSelect::createScene()));
 		});
 	if (startGameItem == nullptr || startGameItem->getContentSize().width <= 0 || startGameItem->getContentSize().height <= 0)
@@ -112,6 +119,7 @@ bool StartGame::init()
 	ifRoom2Ended = false;
 
 	beginMainMusic();
+	CCLOG("MUSIC Begin");
 
 	return true;
 }

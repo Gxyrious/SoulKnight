@@ -32,7 +32,7 @@ void KuangGong::initRole()
 	this->_collisionDamage = 1;
 	//这里虽然用不到武器本身，但是可以用到这个武器里面产生子弹的函数
 	//并且初始化时是在游戏开始的时候，不会引起卡顿
-	this->_weapon = XianQuZhe::create("Weapon/XianQuZhe/XianQuZhe.png");
+	this->_weapon = CommonWeapon::create("Weapon/XianQuZhe/XianQuZhe.png");
 	this->_timeDelay = 120;
 	this->_maxTimeDelay = 120;
 }

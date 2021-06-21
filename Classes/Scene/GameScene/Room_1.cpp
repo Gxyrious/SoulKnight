@@ -148,8 +148,8 @@ bool Room_1::init()
 	this->vecObstacle.push_back(rectDoor_left);
 	this->vecObstacle.push_back(rectDoor_right);
 
-	this->Vec2LeftPosition = Vec2(objectLeftPosition["x"].asFloat(), objectLeftPosition["y"].asFloat());
-	this->Vec2RightPosition = Vec2(objectRightPosition["x"].asFloat(), objectRightPosition["y"].asFloat());
+	this->Vec2LeftPosition = Vec2(objectLeftPosition["x"].asFloat() + 2.0f, objectLeftPosition["y"].asFloat());
+	this->Vec2RightPosition = Vec2(objectRightPosition["x"].asFloat() - 2.0f, objectRightPosition["y"].asFloat());
 
 	return true;
 }
@@ -164,7 +164,11 @@ void Room_1::update(float delta)
 	}
 	ifRoom1Ended = 1;
 	//判断是否进入门
-	if (_role->getRect().intersectsRect(rectDoor_left))
+	//用来判断是否进门的新Rect，即偏左或者偏右时是否进入
+	//Rect(_role->getRect().origin + Vec2(-3, 0), _role->getRect().size);
+	
+	//if (_role->getRect().intersectsRect(rectDoor_left))
+	if(Rect(_role->getRect().origin + Vec2(-8, 0), _role->getRect().size).intersectsRect(rectDoor_left))
 	{
 			_role->stopActionByTag(103);
 			_role->setPosition(Vec2(_role->getPosition().x + 6.67f, _role->getPosition().y));
@@ -173,7 +177,7 @@ void Room_1::update(float delta)
 			nextScene->setInitialLocation("right");
 			Director::getInstance()->replaceScene(nextScene);
 	}
-	if (_role->getRect().intersectsRect(rectDoor_right))
+	if (Rect(_role->getRect().origin + Vec2(8, 0), _role->getRect().size).intersectsRect(rectDoor_right))
 	{
 			_role->stopActionByTag(104);
 			_role->setPosition(Vec2(_role->getPosition().x - 6.67f, _role->getPosition().y));

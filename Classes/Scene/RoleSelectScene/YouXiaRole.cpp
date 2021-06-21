@@ -38,6 +38,7 @@ bool YouXiaSelected::init()
         role_shield = 100;
         role_blue = 200;
         Director::getInstance()->popToRootScene();
+        playClickMusic();
         Director::getInstance()->pushScene(Room_0::create());
         });
     startItem->setAnchorPoint(Vec2::ZERO);

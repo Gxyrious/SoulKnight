@@ -37,6 +37,7 @@ bool SetGameStyle::init()
 	auto styleItemPosition = objectsLayer->getObject("style");
 
 	auto styleItem = MenuItem::create([](Ref* pSender)->void {
+		playClickMusic();
 		Director::getInstance()->popScene();
 		});
 
@@ -98,7 +99,7 @@ bool SetGameStyle::init()
 
 	//滑块
 	LeftPosition = Vec2(visibleSize.width / 3 + 160.0f, musicSetBackground->getContentSize().height / 2 + 15.0f);
-	RightPosition = Vec2(visibleSize.width / 3 * 2 + 70.0f, musicSetBackground->getContentSize().height / 2 + 15.0f);
+	RightPosition = Vec2(visibleSize.width / 3 * 2 + 80.0f, musicSetBackground->getContentSize().height / 2 + 15.0f);
 	huakuaiPosition = RightPosition;
 	huakuaiPosition = Vec2(LeftPosition.x + (RightPosition.x - LeftPosition.x) * musicVolume, RightPosition.y);
 
@@ -132,13 +133,23 @@ void SetGameStyle::musicCloseCallback(cocos2d::Ref* pSender)
 	menu2 = Menu::create(musicOpenButton, NULL);
 	menu2->setPosition(Vec2::ZERO);
 	this->addChild(menu2, 3);
+
+	musicIfOpen = false;
 }
 
 void SetGameStyle::musicOpenCallback(cocos2d::Ref* pSender)
 {
-	CCLOG("music open");
 
-	musicresumeOrpausePlaying();
+	//此动作的作用是考虑到若角色死亡，同时BGM静音
+	if (ifBGMPlaying == false)
+	{
+		beginMainMusic();
+	}
+	else
+		musicresumeOrpausePlaying();
+
+	CCLOG("music open");
+	
 	menu2->removeFromParent();
 
 	//关闭音乐按钮
@@ -148,6 +159,9 @@ void SetGameStyle::musicOpenCallback(cocos2d::Ref* pSender)
 	menu1 = Menu::create(musicCloseButton, NULL);
 	menu1->setPosition(Vec2::ZERO);
 	this->addChild(menu1, 3);
+
+	musicIfOpen = true;
+
 }
 
 bool SetGameStyle::onTouchBegan(Touch* touch, Event* event)

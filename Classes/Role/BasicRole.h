@@ -39,6 +39,9 @@ public:
 
 	float getSkillCD()const;
 	bool _ifRoleCollided;//是否与墙壁碰撞
+
+	void addSkillCD();
+	bool startCalculateSkillCD;
 protected:
 	virtual void initRole();
 	cocos2d::Rect rectRole;//人物矩形
@@ -50,7 +53,8 @@ protected:
 	float _speed;//移动速度
 	float _normalSpeed;//最大移动速度，作为一个定值来衡量加速情况
 	int _timeDelay,_maxTimeDelay;//延时函数有时间可能会改成新的update函数
-	float _skillCD;//技能cd
+	float _skillTimeAddition;//技能cd辅助变量
+	float _skillTimeMaxAddition;//技能cd辅助变量
 };
 
 #endif // !__BASICROLE_H_

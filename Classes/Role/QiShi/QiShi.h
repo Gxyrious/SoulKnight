@@ -5,13 +5,12 @@
 #include "cocos2d.h"
 #include "Role/BasicRole.h"
 #include "Weapon/PoJiuDeShouQiang/PoJiuDeShouQiang.h"
-#include "Bullet/CommonBullet.h"
+#include "Bullet/BulletOfXianQuZhe.h"
 
 class QiShi :public BasicRole
 {
 public:
 	static QiShi* create(const std::string& filename);
-	void setNormalSpeed();
 	virtual void useRoleSkill();
 	virtual void stopRoleSkill();
 private:

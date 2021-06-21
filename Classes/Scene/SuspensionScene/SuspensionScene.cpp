@@ -24,12 +24,15 @@ bool SuspensionScene::init()
 	auto styleItemPosition = objectsLayer->getObject("style");
 
 	auto homeItem = MenuItem::create([](Ref* pSender)->void {
+		playClickMusic();
 		Director::getInstance()->popToRootScene();
 		});
 	auto continueItem = MenuItem::create([](Ref* pSender)->void {
+		playClickMusic();
 		Director::getInstance()->popScene();
 		});
 	auto styleItem = MenuItem::create([](Ref* pSender)->void {
+		playClickMusic();
 		Director::getInstance()->pushScene(SetGameStyle::create());
 		});
 	homeItem->setAnchorPoint(Vec2::ZERO);

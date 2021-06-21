@@ -62,13 +62,14 @@ bool BasicScene::init()
 	//将人物、武器加入到场景中
 	this->addChild(_role, 1);
 	this->addChild(_role->getWeapon(), 2);
-	this->addChild(this->roleBulletLayer,4);//将武器类中的子弹层加入到场景中
+	this->addChild(this->roleBulletLayer, 4);//将武器类中的子弹层加入到场景中
 	//将暂停按钮加入到场景中
 	auto suspensionItem = MenuItemImage::create(
 		"SuspensionRelated/SuspensionItem.png",
 		"SuspensionRelated/SuspensionItem.png",
 		[this](Ref* pSender)->void {
 			this->unscheduleUpdate();
+			playClickMusic();
 			Director::getInstance()->pushScene(SuspensionScene::create());
 			this->scheduleUpdate();
 		});
@@ -77,7 +78,7 @@ bool BasicScene::init()
 	menu->setPosition(Vec2::ZERO);
 	this->addChild(menu, 6);
 
-	
+
 
 	//这三个初始化全部放在基类里面了，照理说应该每个人物里面分别初始化的
 	//等到我修改每个人物的时候再改吧
@@ -117,7 +118,6 @@ void BasicScene::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event)
 	}
 	Vec2 endPosition = touch->getLocation();
 	Vec2 startPosition = _role->getWeapon()->getPosition();
-	//_role->getWeapon()->createBulletToLayer(startPosition, endPosition);
 	auto bullet = _role->getWeapon()->createBullet();
 	bullet->setMoveVector(startPosition, endPosition);
 	bullet->setPosition(startPosition);
@@ -158,7 +158,7 @@ void BasicScene::ifRoleDead()
 {
 	if (_role->getBlood() <= 0)
 	{
-		Director::getInstance()->pushScene(GameLose::create());
+		Director::getInstance()->pushScene(GameLose::create());	
 	}
 }
 
@@ -244,9 +244,13 @@ inline void BasicScene::useRoleSkill()
 void BasicScene::update()//一秒60帧
 {
 	ifRoleDead();
-	if (_keyMap[EventKeyboard::KeyCode::KEY_E])
+	if (_keyMap[EventKeyboard::KeyCode::KEY_E] && !_role->startCalculateSkillCD)
 	{
 		this->useRoleSkill();
+	}
+	if (_role->startCalculateSkillCD)
+	{
+		_role->addSkillCD();
 	}
 
 	//this->updateRole();
@@ -440,7 +444,7 @@ inline void BasicScene::moveRole(float delta)
 	float offSetX = 0.0f, offSetY = 0.0f;
 	if (this->_role->_ifRoleCollided)
 	{
-		this->_role->setSpeed(this->_role->getNormalSpeed()*3.0f);
+		this->_role->setSpeed(this->_role->getNormalSpeed() * 3.0f);
 	}
 	if (_keyMap[EventKeyboard::KeyCode::KEY_W])
 	{
@@ -458,14 +462,29 @@ inline void BasicScene::moveRole(float delta)
 	{
 		offSetX = this->_role->getSpeed();
 	}
-	
-	if (offSetX == 0 && offSetY == 0 || ifRectCollideObstacles(Rect(this->_role->getRect().origin + Vec2(offSetX, offSetY), this->_role->getRect().size)))
+	if (offSetX == 0 && offSetY == 0)
+	{
+		return;
+	}
+
+	//如果下一个位置有碰撞的话，就return
+	/*
+	* 根据推测，移动会卡顿的原因是以前的moveBy还没有运行完毕，进墙卡顿不会发生在一下一下移动中，
+	* 而是连续移动的时候会出现，即虽然判断会有碰撞，没有添加这个运动进入，但以前的运动还没有运完
+	*/
+	if (ifRectCollideObstacles(Rect(this->_role->getRect().origin + Vec2(offSetX, offSetY), this->_role->getRect().size)))
 	{
 		this->_role->_ifRoleCollided = true;
+		this->_role->stopAllActions();
+		
 		return;
 	}
 	this->_role->_ifRoleCollided = false;
-	this->_role->setNormalSpeed();
+	if (!_role->startCalculateSkillCD)
+	{
+		this->_role->setNormalSpeed();
+	}
+	
 	MoveBy* moveBy = MoveBy::create(delta, Vec2(offSetX, offSetY));
 	this->_role->runAction(moveBy);
 }

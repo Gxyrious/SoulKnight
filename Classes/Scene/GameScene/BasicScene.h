@@ -7,8 +7,8 @@
 #include "Role/RoleFile.h"
 #include "Bullet/BasicBullet.h"
 #include "Scene/GameScene/GameSceneInfo.h"
-#include "Scene/SuspensionScene/SuspensionScene.h"
 #include "Scene/GameEndScene/GameLoseScene.h"
+#include "Scene/SuspensionScene/SuspensionScene.h"
 
 
 class BasicScene :public cocos2d::Scene
@@ -108,7 +108,6 @@ protected:
 	* 将子弹类型定义在场景类中，从而有利于多个子弹的生成
 	* 当然这里子弹的类型是BasicBullet*,因此有需要的时候可以重新赋值，即切换武器
 	*/
-	//BasicBullet* _bullet = CommonBullet::create("Bullet/CommonBullet.png");;
 	cocos2d::Layer* roleBulletLayer = cocos2d::Layer::create();
 	cocos2d::Layer* propertiesLayer = cocos2d::Layer::create();
 	inline void initPropertiesLayer();

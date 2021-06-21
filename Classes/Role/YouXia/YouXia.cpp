@@ -16,17 +16,18 @@ YouXia* YouXia::create(const std::string& filename)
 
 void YouXia::useRoleSkill()
 {
-	this->setSpeed(_normalSpeed);
+	this->startCalculateSkillCD = true;
+	this->_speed = _normalSpeed * 4.0f;
 }
 
 void YouXia::stopRoleSkill()
 {
-	this->_speed = 10.0f;
+	this->startCalculateSkillCD = false;
+	this->_speed = _normalSpeed;
 }
 
 void YouXia::initRole()
 {
-	//设定初始位置：中间；设置初始人物矩形：中间
 	BasicRole::initRole();
 
 	this->_timeDelay = 60;
@@ -39,12 +40,15 @@ void YouXia::initRole()
 	this->_maxBlue = 200;
 	this->_maxShield = 100;
 
-	this->_speed = 12.0f;
-	this->_normalSpeed = 12.0f;
+	this->_speed = 10.0f;
+	this->_normalSpeed = 10.0f;
 
-	this->_skillCD = 0.1f;//
+	this->_skillTimeMaxAddition = 10;
+	this->_skillTimeAddition = 0;
+	this->startCalculateSkillCD = false;
 
 	this->_ifRoleCollided = false;
+
 	//这里创建了youxia的武器
 	this->_weapon = XianQuZhe::create("Weapon/XianQuZhe/XianQuZhe.png");
 }

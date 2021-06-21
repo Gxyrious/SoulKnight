@@ -16,7 +16,7 @@ CommonBullet* CommonBullet::create(const std::string& filename)
 
 void CommonBullet::initBullet()
 {
-	this->_speed = 20.0f;
+	this->_speed = 10.0f;
 	this->_damage = 10;
-	this->_blueComsumption = 2;
+	this->_blueComsumption = 0;
 }

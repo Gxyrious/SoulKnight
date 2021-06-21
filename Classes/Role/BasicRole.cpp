@@ -128,7 +128,17 @@ void BasicRole::stopRoleSkill()
 
 float BasicRole::getSkillCD() const
 {
-	return this->_skillCD;
+	return this->_skillTimeMaxAddition;
+}
+
+void BasicRole::addSkillCD()
+{
+	_skillTimeAddition++;
+	if (_skillTimeAddition >= _skillTimeMaxAddition)
+	{
+		_skillTimeAddition = 0;
+		this->stopRoleSkill();
+	}
 }
 
 BasicWeapon* BasicRole::getWeapon()const

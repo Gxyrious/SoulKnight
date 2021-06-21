@@ -39,6 +39,7 @@ bool ShengQiShiSelected::init()
         role_shield = 200;
         role_blue = 200;
         Director::getInstance()->popToRootScene();
+        playClickMusic();
         Director::getInstance()->pushScene(Room_0::create());
         });
     startItem->setAnchorPoint(Vec2(0, 0));

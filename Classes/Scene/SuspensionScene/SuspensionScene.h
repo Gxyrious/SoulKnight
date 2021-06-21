@@ -4,6 +4,7 @@
 
 #include "cocos2d.h"
 #include "Scene/StartGameScene/SetGameStyleScene.h"
+#include "Music/Music.h"
 
 class SuspensionScene :public cocos2d::Scene
 {

@@ -14,17 +14,14 @@ QiShi* QiShi::create(const std::string& filename)
 	return nullptr;
 }
 
-void QiShi::setNormalSpeed()
-{
-	this->_speed = 50.0f;
-}
-
 void QiShi::useRoleSkill()
 {
+
 }
 
 void QiShi::stopRoleSkill()
 {
+
 }
 
 void QiShi::initRole()
@@ -37,14 +34,16 @@ void QiShi::initRole()
 	this->_blood = 40;
 	this->_blue = 200;
 	this->_shield = 150;
-	this->_maxBlood = 70;
+	this->_maxBlood = 40;
 	this->_maxBlue = 200;
 	this->_maxShield = 200;
 	
 	this->_speed = 9.0f;
 	this->_normalSpeed = 9.0f;
 
-	this->_skillCD = 0.1f;//
+	this->_skillTimeMaxAddition = 180;
+	this->_skillTimeAddition = 0;
+	this->startCalculateSkillCD = false;
 
 	this->_ifRoleCollided = false;
 

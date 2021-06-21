@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="12" height="6" tilewidth="30" tileheight="30" infinite="0" nextlayerid="3" nextobjectid="10">
+ <tileset firstgid="1" name="PropertyList" tilewidth="30" tileheight="30" tilecount="72" columns="12">
+  <image source="PropertyList.png" width="360" height="180"/>
+ </tileset>
+ <layer id="1" name="propertyList" width="12" height="6">
+  <data encoding="base64" compression="zlib">
+   eJwNwwVSAgEAAMATlC6lkTJJg7Aoafj/i9id2asgCEKGvfbGiFFjxk2YNGXajFlz3npn3oJFS5atWLXmvXUbNm3Z9sFHn3z2xVc7du3Zd+DQN9/98NORYydO/fLbH3/9c+bchUtX/rt249adew8ePXn2AvYtCkU=
+  </data>
+ </layer>
+ <objectgroup id="2" name="objectsLayer">
+  <object id="1" name="xiexian_1" x="202.5" y="37.5">
+   <point/>
+  </object>
+  <object id="2" name="blood" x="157.5" y="37.5">
+   <point/>
+  </object>
+  <object id="3" name="blue" x="157.5" y="135">
+   <point/>
+  </object>
+  <object id="4" name="shield" x="157.5" y="82.5">
+   <point/>
+  </object>
+  <object id="5" name="xiexian_2" x="202.5" y="135">
+   <point/>
+  </object>
+  <object id="6" name="xiexian_3" x="202.5" y="82.5">
+   <point/>
+  </object>
+  <object id="7" name="maxblood" x="247.5" y="37.5">
+   <point/>
+  </object>
+  <object id="8" name="maxblue" x="247.5" y="135">
+   <point/>
+  </object>
+  <object id="9" name="maxshield" x="247.5" y="82.5">
+   <point/>
+  </object>
+ </objectgroup>
+</map>
